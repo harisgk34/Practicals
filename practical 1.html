@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CAPTCHA practical</title>
+
+</head>
+<body>
+  <div id="captcha">
+    <img id="captcha-img" src="7f6475b3-9625-41b3-a55a-772e0d0da857.jpg" alt="CAPTCHA Image" ></div>
+    <div id="captcha2"><input type="text" id="captcha-input" placeholder="Enter CAPTCHA" style="display: flex; fl">
+    <button onclick="validateCaptcha()">Verify</button>
+  </div>
+
+
+</body>
+</html>
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    
+    
+    
+  }
+  #captcha {
+    
+
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    
+  }
+  #captcha img {
+    margin: 200px;
+    margin-bottom: 20px;
+    height: 200px;
+    width: 250px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  button{
+    background-color: lightgreen;
+    color: black;
+    padding: 2px;
+    border: none
+    
+  }
+  #captcha2{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 6px;
+    margin-top: 20px;
+    height: ;
+   
+  }
+
+ 
+    
+</style>
+
+
+
+<script>
+  function validateCaptcha() {
+    var captchaInput = document.getElementById('captcha-input').value;
+    
+    
+    var captchaValue = 'EqFtlz';
+    
+    if (captchaInput === captchaValue) {
+      alert('CAPTCHA Verification is correct!');
+    } else {
+      alert('CAPTCHA Verification  is incorrect!');
+    }
+  }
+</script>

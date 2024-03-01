@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 2</title>
+
+</head>
+<body>
+  <div class="gallery">
+    <img src="https://picsum.photos/200/300?random=1" alt="Image 1" onclick="showPopup('Image 1', 'https://picsum.photos/800/1200?random=1')">
+    <img src="https://picsum.photos/200/300?random=2" alt="Image 2" onclick="showPopup('Image 2', 'https://picsum.photos/800/1200?random=2')">
+    <img src="https://picsum.photos/200/300?random=3" alt="Image 3" onclick="showPopup('Image 3', 'https://picsum.photos/800/1200?random=3')">
+    
+  </div>
+
+  <div class="popup" id="popup">
+
+
+    <div onclick="closePopup()" style="cursor: pointer; position: absolute; top: 10px; right: 10px;"><P>X</P></div>
+    <img id="popup-image" src="" alt="">
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 200px;
+      height: 150px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 9999;
+      backdrop-filter: blur(10px);
+    }
+    .popup img {
+      max-width: 100%;
+      max-height: 80vh;
+    }
+
+    
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9998;
+    }
+  </style>
+
+  <script>
+    function showPopup(title, imageUrl) {
+      var popup = document.getElementById('popup');
+      var popupImage = document.getElementById('popup-image');
+      var overlay = document.getElementById('overlay');
+      
+      popupImage.src = imageUrl;
+      popup.style.display = 'block';
+      overlay.style.display = 'block';
+      document.body.style.overflow = 'hidden'; 
+    }
+
+    function closePopup() {
+      var popup = document.getElementById('popup');
+      var overlay = document.getElementById('overlay');
+      
+      popup.style.display = 'none';
+      overlay.style.display = 'none';
+      document.body.style.overflow = ''; 
+    }
+  </script>
+</body>
+</html>

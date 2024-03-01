@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practical 3</title>
+<link rel="stylesheet" href="practicalz3.css">
+
+</head>
+<body>
+
+    <h1 >Interactive Quiz</h1>
+  <div class="quiz">
+    <div class="question">
+      <p>1. What is the capital of France?</p>
+      <label class="answer"><input type="radio" name="q1" value="Paris"> Paris</label>
+      <label class="answer"><input type="radio" name="q1" value="London"> London</label>
+      <label class="answer"><input type="radio" name="q1" value="Berlin"> Berlin</label>
+    </div>
+    <div class="question">
+      <p>2. Which planet is known as the Red Planet?</p>
+      <label class="answer"><input type="radio" name="q2" value="Mars"> Mars</label>
+      <label class="answer"><input type="radio" name="q2" value="Jupiter"> Jupiter</label>
+      <label class="answer"><input type="radio" name="q2" value="Venus"> Venus</label>
+    </div>
+    <div class="question">
+      <p>3. What is the largest mammal on Earth?</p>
+      <label class="answer"><input type="radio" name="q3" value="Elephant"> Elephant</label>
+      <label class="answer"><input type="radio" name="q3" value="Giraffe"> Giraffe</label>
+      <label class="answer"><input type="radio" name="q3" value="Giraffe"> Neruppukozhi</label>
+    </div>
+
+    <button class="submit" onclick="submitQuiz()">Submit</button>
+  </div>
+
+  <div class="score-popup" id="score-popup">
+    <span onclick="closeScorePopup()" style="cursor: pointer; position: absolute; top: 10px; right: 10px;"><p>X</p></span>
+    <h2>Interactive Quiz Resault</h2><p> Score: <span id="score"></span>/3</p>
+  </div>
+
+  <script>
+    function submitQuiz() {
+      var answers = {
+        q1: document.querySelector('input[name="q1"]:checked').value,
+        q2: document.querySelector('input[name="q2"]:checked').value,
+        q3: document.querySelector('input[name="q3"]:checked').value
+      };
+      
+      var score = 0;
+      if (answers.q1 === 'Paris') score++;
+      if (answers.q2 === 'Mars') score++;
+      if (answers.q3 === 'Elephant') score++;
+      
+      document.getElementById('score').innerText = score;
+      document.getElementById('score-popup').style.display = 'block';
+    }
+
+    function closeScorePopup() {
+      document.getElementById('score-popup').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
