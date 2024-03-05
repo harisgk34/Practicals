@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    
+    
+    
+  }
+  #captcha {
+    
+
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 50px;
+    
+  }
+  #captcha img {
+    margin: 200px;
+    margin-bottom: 20px;
+    height: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  button{
+    background-color: lightgreen;
+    color: black;
+    padding: 2px;
+    border: none
+    
+  }
+  #captcha2{
+   display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 6px;
+    margin-top: 20px;
+    height: ;
+   
+  }

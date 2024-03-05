@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CAPTCHA practical</title>
 
+
+<link rel="stylesheet" href="practical1.css" class="css">
+
 </head>
 <body>
   <div id="captcha">
@@ -14,72 +17,13 @@
   </div>
 
 
+  <script src="practical1.js" >
+ 
+  </script>
+
 </body>
 </html>
 
 
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    
-    
-    
-  }
-  #captcha {
-    
-
-   
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 50px;
-    
-  }
-  #captcha img {
-    margin: 200px;
-    margin-bottom: 20px;
-    height: 200px;
-    width: 250px;
-    display: flex;
-    flex-direction: row;
-  }
-
-  button{
-    background-color: lightgreen;
-    color: black;
-    padding: 2px;
-    border: none
-    
-  }
-  #captcha2{
-   display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row;
-    column-gap: 6px;
-    margin-top: 20px;
-    height: ;
-   
-  }
-
- 
-    
-</style>
 
 
-
-<script>
-  function validateCaptcha() {
-    var captchaInput = document.getElementById('captcha-input').value;
-    
-    
-    var captchaValue = 'EqFtlz';
-    
-    if (captchaInput === captchaValue) {
-      alert('CAPTCHA Verification is correct!');
-    } else {
-      alert('CAPTCHA Verification  is incorrect!');
-    }
-  }
-</script>
